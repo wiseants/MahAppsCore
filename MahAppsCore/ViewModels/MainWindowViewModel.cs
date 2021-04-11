@@ -6,7 +6,7 @@ namespace MahAppsCore.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        private string _title = "Prism Application";
+        private string _title = "MahApps";
         private IEventAggregator _eventAggregator;
         private IModuleManager _moduleManager;
 
@@ -16,7 +16,9 @@ namespace MahAppsCore.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        public MainWindowViewModel(IEventAggregator eventAggregator, IModuleManager moduleManager)
+        public MainWindowViewModel(
+            IEventAggregator eventAggregator, 
+            IModuleManager moduleManager)
         {
             _eventAggregator = eventAggregator;
             _moduleManager = moduleManager;
