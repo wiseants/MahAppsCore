@@ -1,4 +1,5 @@
-﻿using MahAppsCore.Views;
+﻿using MahApps.Metro.Controls;
+using MahAppsCore.Views;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Unity;
@@ -13,12 +14,12 @@ namespace MahAppsCore
     {
         protected override Window CreateShell()
         {
-            return Container.Resolve<MainWindow>();
+            return Container.Resolve<MetroWindow>("MainWindow");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            containerRegistry.Register<MetroWindow, MainWindow>("MainWindow");
         }
 
         protected override IModuleCatalog CreateModuleCatalog()
