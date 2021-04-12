@@ -1,6 +1,8 @@
 ﻿using Prism.Events;
+using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Mvvm;
+using Prism.Regions;
 
 namespace MahAppsCore.ViewModels
 {
@@ -9,6 +11,8 @@ namespace MahAppsCore.ViewModels
         private string _title = "MahApps";
         private IEventAggregator _eventAggregator;
         private IModuleManager _moduleManager;
+        private IContainerExtension _container;
+        private IRegionManager _regionManager;
 
         public string Title
         {
@@ -18,10 +22,14 @@ namespace MahAppsCore.ViewModels
 
         public MainWindowViewModel(
             IEventAggregator eventAggregator, 
-            IModuleManager moduleManager)
+            IModuleManager moduleManager, 
+            IContainerExtension container, 
+            IRegionManager regionManager)
         {
             _eventAggregator = eventAggregator;
             _moduleManager = moduleManager;
+            _container = container;
+            _regionManager = regionManager;
         }
     }
 }
