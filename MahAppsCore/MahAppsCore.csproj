@@ -6,10 +6,16 @@
     <AssemblyName>MahAppsCore</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Assets\Images\dashboard_32.png" />
+    <None Remove="Assets\Images\dashboard_48.png" />
     <None Remove="Assets\Images\user_32.png" />
+    <None Remove="Assets\Images\user_48.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\Images\dashboard_32.png" />
+    <Resource Include="Assets\Images\dashboard_48.png" />
     <Resource Include="Assets\Images\user_32.png" />
+    <Resource Include="Assets\Images\user_48.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="2.4.4" />

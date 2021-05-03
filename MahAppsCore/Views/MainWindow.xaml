@@ -12,71 +12,42 @@
 
             <!--  This is the template for all menu items. In this sample we use the glyph items.  -->
             <DataTemplate x:Key="HamburgerMenuItem" DataType="{x:Type mah:HamburgerMenuGlyphItem}">
-                <DockPanel Height="48" LastChildFill="True">
-                    <Grid x:Name="IconPart"
-                          Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}, Path=CompactPaneLength}"
-                          DockPanel.Dock="Left">
-                        <Image Margin="12"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               Source="{Binding Glyph}" />
+                <DockPanel LastChildFill="True">
+                    <Grid x:Name="IconPart" DockPanel.Dock="Left"
+                          Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}, Path=CompactPaneLength}">
+                        <Image Margin="12" HorizontalAlignment="Center" VerticalAlignment="Center" Source="{Binding Glyph}" />
                     </Grid>
-                    <TextBlock x:Name="TextPart"
-                               VerticalAlignment="Center"
-                               FontSize="16"
-                               Text="{Binding Label}" />
+                    <TextBlock x:Name="TextPart" VerticalAlignment="Center" FontSize="16" Text="{Binding Label}" />
                 </DockPanel>
                 <DataTemplate.Triggers>
                     <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}, Path=PanePlacement}" Value="Right">
                         <Setter TargetName="IconPart" Property="DockPanel.Dock" Value="Right" />
-                        <Setter TargetName="TextPart" Property="Margin" Value="8 0 0 0" />
                     </DataTrigger>
                 </DataTemplate.Triggers>
             </DataTemplate>
             <DataTemplate x:Key="HamburgerOptionsMenuItem" DataType="{x:Type mah:HamburgerMenuIconItem}">
-                <DockPanel Height="48" LastChildFill="True">
-                    <ContentControl x:Name="IconPart"
+                <DockPanel LastChildFill="True">
+                    <ContentControl x:Name="IconPart" DockPanel.Dock="Left"
                                     Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}, Path=CompactPaneLength}"
-                                    Content="{Binding Icon}"
-                                    DockPanel.Dock="Left"
-                                    Focusable="False"
-                                    IsTabStop="False" />
-                    <TextBlock x:Name="TextPart"
-                               VerticalAlignment="Center"
-                               FontSize="16"
-                               Text="{Binding Label}" />
+                                    Content="{Binding Icon}" />
+                    <TextBlock x:Name="TextPart" VerticalAlignment="Center" FontSize="16" Text="{Binding Label}" />
                 </DockPanel>
-                <DataTemplate.Triggers>
-                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}, Path=PanePlacement}" Value="Right">
-                        <Setter TargetName="IconPart" Property="DockPanel.Dock" Value="Right" />
-                        <Setter TargetName="TextPart" Property="Margin" Value="8 0 0 0" />
-                    </DataTrigger>
-                </DataTemplate.Triggers>
             </DataTemplate>
         </ResourceDictionary>
     </mah:MetroWindow.Resources>
-    <mahControls:HamburgerMenu x:Name="HamburgerMenuControl"
-                               DisplayMode="CompactOverlay"
-                               HamburgerWidth="48"
-                               IsPaneOpen="{Binding IsHamburgerMenuPaneOpen}"
-                               ItemTemplate="{StaticResource HamburgerMenuItem}"
-                               OptionsItemTemplate="{StaticResource HamburgerOptionsMenuItem}"
-                               SelectedIndex="1"
-                               VerticalScrollBarOnLeftSide="False">
+    <mahControls:HamburgerMenu ItemTemplate="{StaticResource HamburgerMenuItem}"
+                               OptionsItemTemplate="{StaticResource HamburgerOptionsMenuItem}">
         <!--  Header  -->
         <mahControls:HamburgerMenu.HamburgerMenuHeaderTemplate>
             <DataTemplate>
-                <TextBlock HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   FontSize="16"
-                   Foreground="White"
-                   Text="Pictures" />
+                <TextBlock FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" Text="Menu" />
             </DataTemplate>
         </mahControls:HamburgerMenu.HamburgerMenuHeaderTemplate>
         <!--  Items  -->
         <mahControls:HamburgerMenu.ItemsSource>
             <mahControls:HamburgerMenuItemCollection>
                 <mahControls:HamburgerMenuGlyphItem Glyph="/Assets/Images/user_32.png" Label="User" />
+                <mahControls:HamburgerMenuGlyphItem Glyph="/Assets/Images/dashboard_32.png" Label="Dashboard" />
             </mahControls:HamburgerMenuItemCollection>
         </mahControls:HamburgerMenu.ItemsSource>
         <!--  Options  -->
