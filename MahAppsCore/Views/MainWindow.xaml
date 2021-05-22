@@ -40,7 +40,7 @@
         <!--  Header  -->
         <mahControls:HamburgerMenu.HamburgerMenuHeaderTemplate>
             <DataTemplate>
-                <TextBlock FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" Text="Menu" />
+                <TextBlock FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="8,0,0,0" Foreground="White" Text="Menu" />
             </DataTemplate>
         </mahControls:HamburgerMenu.HamburgerMenuHeaderTemplate>
         <!--  Items  -->
