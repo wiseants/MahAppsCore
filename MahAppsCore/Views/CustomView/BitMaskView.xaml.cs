@@ -33,11 +33,23 @@ namespace MahAppsCore.Views.CustomView
             set => SetValue(ItemsSourceProperty, value);
         }
 
+        public string Title
+        {
+            get => (string)GetValue(TitleProperty);
+            set => SetValue(TitleProperty, value);
+        }
+
         public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register(
             "ItemsSource",
             typeof(IEnumerable),
             typeof(BitMaskView),
             new PropertyMetadata(new PropertyChangedCallback(OnItemsSourcePropertyChanged)));
+
+        public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
+            "Title",
+            typeof(string),
+            typeof(BitMaskView),
+            new PropertyMetadata("None"));
 
         private static void OnItemsSourcePropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {

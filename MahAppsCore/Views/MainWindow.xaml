@@ -60,7 +60,7 @@
         <!--  Content  -->
         <mahControls:HamburgerMenu.ContentTemplate>
             <DataTemplate>
-                <controls:BitMaskView
+                <controls:BitMaskView Title="Test2"
                     ItemsSource="{Binding Path=BitMasks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </DataTemplate>
         </mahControls:HamburgerMenu.ContentTemplate>
