@@ -5,6 +5,7 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:mahControls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:controls="clr-namespace:MahAppsCore.Views.CustomView"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="350" Width="525" >
     <mah:MetroWindow.Resources>
@@ -59,7 +60,7 @@
         <!--  Content  -->
         <mahControls:HamburgerMenu.ContentTemplate>
             <DataTemplate>
-                <TextBlock Text="Test" />
+                <controls:BitMaskView />
             </DataTemplate>
         </mahControls:HamburgerMenu.ContentTemplate>
     </mahControls:HamburgerMenu>
