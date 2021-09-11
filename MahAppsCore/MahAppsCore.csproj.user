@@ -10,9 +10,15 @@
     <Compile Update="Views\CustomView\BitMaskView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\CustomView\SliderView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\CustomView\BitMaskView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CustomView\SliderView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">

@@ -44,5 +44,6 @@
         <Button Content="Binding" Command="{Binding Path=BindingCommand}" />
         <controls:BitMaskView
             ItemsSource="{Binding Path=BitMasks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <controls:SliderView />
     </StackPanel>
 </mah:MetroWindow>
