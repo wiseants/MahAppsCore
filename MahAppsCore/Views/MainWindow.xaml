@@ -42,7 +42,7 @@
     </mah:MetroWindow.Resources>
     <StackPanel>
         <Button Content="Binding" Command="{Binding Path=BindingCommand}" />
-        <controls:BitMaskView Title="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                    ItemsSource="{Binding Path=BitMasks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <controls:BitMaskView
+            ItemsSource="{Binding Path=BitMasks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
     </StackPanel>
 </mah:MetroWindow>

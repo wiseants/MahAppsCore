@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MahAppsCore.Views.CustomView
 {
@@ -20,24 +11,7 @@ namespace MahAppsCore.Views.CustomView
     /// </summary>
     public partial class BitMaskView : UserControl
     {
-        public BitMaskView()
-        {
-            InitializeComponent();
-
-            //DataContext = this;
-        }
-
-        public IEnumerable<BitMaskInfo> ItemsSource
-        {
-            get => (IEnumerable<BitMaskInfo>)GetValue(ItemsSourceProperty);
-            set => SetValue(ItemsSourceProperty, value);
-        }
-
-        public string Title
-        {
-            get => (string)GetValue(TitleProperty);
-            set => SetValue(TitleProperty, value);
-        }
+        #region Fields
 
         public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register(
             "ItemsSource",
@@ -45,16 +19,28 @@ namespace MahAppsCore.Views.CustomView
             typeof(BitMaskView),
             new PropertyMetadata(null, new PropertyChangedCallback(OnItemsSourcePropertyChanged)));
 
-        //public static DependencyProperty TitleProperty = DependencyProperty.Register(
-        //    "Title",
-        //    typeof(string),
-        //    typeof(BitMaskView));
+        #endregion
 
-        public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
-            "Title",
-            typeof(string),
-            typeof(BitMaskView),
-            new PropertyMetadata("None", new PropertyChangedCallback(OnItemsSourcePropertyChanged)));
+        #region Constructors
+
+        public BitMaskView()
+        {
+            InitializeComponent();
+        }
+
+        #endregion
+
+        #region Properties
+
+        public IEnumerable<BitMaskInfo> ItemsSource
+        {
+            get => (IEnumerable<BitMaskInfo>)GetValue(ItemsSourceProperty);
+            set => SetValue(ItemsSourceProperty, value);
+        }
+
+        #endregion
+
+        #region Event handlers
 
         private static void OnItemsSourcePropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
@@ -84,5 +70,7 @@ namespace MahAppsCore.Views.CustomView
         {
             //Do your stuff here.
         }
+
+        #endregion
     }
 }
