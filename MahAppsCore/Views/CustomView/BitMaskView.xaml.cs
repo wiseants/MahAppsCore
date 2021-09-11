@@ -25,12 +25,6 @@ namespace MahAppsCore.Views.CustomView
             InitializeComponent();
 
             DataContext = this;
-
-            ItemsSource = new List<BitMaskInfo>()
-            {
-                new BitMaskInfo() { Key="A", IsEnable = true },
-                new BitMaskInfo() { Key="B", IsEnable = false },
-            };
         }
 
         public IEnumerable ItemsSource
