@@ -24,12 +24,12 @@ namespace MahAppsCore.Views.CustomView
         {
             InitializeComponent();
 
-            DataContext = this;
+            //DataContext = this;
         }
 
-        public IEnumerable ItemsSource
+        public IEnumerable<BitMaskInfo> ItemsSource
         {
-            get => (IEnumerable)GetValue(ItemsSourceProperty);
+            get => (IEnumerable<BitMaskInfo>)GetValue(ItemsSourceProperty);
             set => SetValue(ItemsSourceProperty, value);
         }
 
@@ -41,15 +41,20 @@ namespace MahAppsCore.Views.CustomView
 
         public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register(
             "ItemsSource",
-            typeof(IEnumerable),
+            typeof(IEnumerable<BitMaskInfo>),
             typeof(BitMaskView),
-            new PropertyMetadata(new PropertyChangedCallback(OnItemsSourcePropertyChanged)));
+            new PropertyMetadata(null, new PropertyChangedCallback(OnItemsSourcePropertyChanged)));
 
-        public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
+        public static DependencyProperty TitleProperty = DependencyProperty.Register(
             "Title",
             typeof(string),
-            typeof(BitMaskView),
-            new PropertyMetadata("None"));
+            typeof(BitMaskView));
+
+        //public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
+        //    "Title",
+        //    typeof(string),
+        //    typeof(BitMaskView),
+        //    new PropertyMetadata("None", new PropertyChangedCallback(OnItemsSourcePropertyChanged)));
 
         private static void OnItemsSourcePropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {

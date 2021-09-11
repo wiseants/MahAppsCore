@@ -1,16 +1,18 @@
-﻿using Prism.Events;
+﻿using Prism.Commands;
+using Prism.Events;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Regions;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace MahAppsCore.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        private string _title = "MahAppsWithPrism";
+        private string _title;
         private IEventAggregator _eventAggregator;
         private IModuleManager _moduleManager;
         private IContainerExtension _container;
@@ -29,6 +31,8 @@ namespace MahAppsCore.ViewModels
             set { SetProperty(ref _bitMasks, value); }
         }
 
+        public DelegateCommand BindingCommand { get; private set; }
+
         public MainWindowViewModel(
             IEventAggregator eventAggregator, 
             IModuleManager moduleManager, 
@@ -45,6 +49,13 @@ namespace MahAppsCore.ViewModels
                 new BitMaskInfo() { Key="A", IsEnable = true },
                 new BitMaskInfo() { Key="B", IsEnable = false },
             };
+
+            BindingCommand = new DelegateCommand(() =>
+            {
+                Title = "Command";
+            });
+
+            Title = "Init";
         }
     }
 }

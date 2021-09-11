@@ -40,29 +40,9 @@
             </DataTemplate>
         </ResourceDictionary>
     </mah:MetroWindow.Resources>
-    <mahControls:HamburgerMenu ItemTemplate="{StaticResource HamburgerMenuItem}"
-                               OptionsItemTemplate="{StaticResource HamburgerOptionsMenuItem}">
-        <!--  Header  -->
-        <mahControls:HamburgerMenu.HamburgerMenuHeaderTemplate>
-            <DataTemplate>
-                <TextBlock FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="8,0,0,0" Foreground="White" Text="Menu" />
-            </DataTemplate>
-        </mahControls:HamburgerMenu.HamburgerMenuHeaderTemplate>
-        <!--  Items  -->
-        <mahControls:HamburgerMenu.ItemsSource>
-            <mahControls:HamburgerMenuItemCollection>
-                <mahControls:HamburgerMenuGlyphItem Glyph="/Assets/Images/user_32.png" Label="User" />
-                <mahControls:HamburgerMenuGlyphItem Glyph="/Assets/Images/dashboard_32.png" Label="Dashboard" />
-            </mahControls:HamburgerMenuItemCollection>
-        </mahControls:HamburgerMenu.ItemsSource>
-        <!--  Options  -->
-        
-        <!--  Content  -->
-        <mahControls:HamburgerMenu.ContentTemplate>
-            <DataTemplate>
-                <controls:BitMaskView Title="Test2"
+    <StackPanel>
+        <Button Content="Binding" Command="{Binding Path=BindingCommand}" />
+        <controls:BitMaskView Title="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     ItemsSource="{Binding Path=BitMasks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-            </DataTemplate>
-        </mahControls:HamburgerMenu.ContentTemplate>
-    </mahControls:HamburgerMenu>
+    </StackPanel>
 </mah:MetroWindow>
