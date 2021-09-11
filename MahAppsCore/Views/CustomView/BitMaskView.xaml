@@ -18,7 +18,8 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <CheckBox 
-                        Content="{Binding Path=Key, UpdateSourceTrigger=PropertyChanged}" />
+                        Content="{Binding Path=Key, UpdateSourceTrigger=PropertyChanged}"
+                        IsChecked="{Binding Path=IsEnable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

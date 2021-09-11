@@ -26,10 +26,10 @@ namespace MahAppsCore.Views.CustomView
 
             DataContext = this;
 
-            ItemsSource = new List<KeyValuePair<string, bool>>()
+            ItemsSource = new List<BitMaskInfo>()
             {
-                new KeyValuePair<string, bool>("UseA", true),
-                new KeyValuePair<string, bool>("UseB", false)
+                new BitMaskInfo() { Key="A", IsEnable = true },
+                new BitMaskInfo() { Key="B", IsEnable = false },
             };
         }
 
