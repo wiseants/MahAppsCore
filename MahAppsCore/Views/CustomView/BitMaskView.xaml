@@ -9,7 +9,7 @@
     <StackPanel Orientation="Horizontal">
         <TextBlock Text="{Binding Path=Title, Mode=TwoWay}" />
         <ListBox ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
-                 ItemsSource="{Binding Path=ItemsSource, UpdateSourceTrigger=PropertyChanged}">
+                 ItemsSource="{Binding Path=ItemsSource, ElementName=uclMitMask, UpdateSourceTrigger=PropertyChanged}">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel IsItemsHost="True" />
@@ -18,7 +18,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <CheckBox 
-                        Content="{Binding Path=Key, ElementName=uclMitMask, UpdateSourceTrigger=PropertyChanged}"
+                        Content="{Binding Path=Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         IsChecked="{Binding Path=IsEnable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>

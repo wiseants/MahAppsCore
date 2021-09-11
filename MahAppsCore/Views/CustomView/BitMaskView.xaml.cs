@@ -45,16 +45,16 @@ namespace MahAppsCore.Views.CustomView
             typeof(BitMaskView),
             new PropertyMetadata(null, new PropertyChangedCallback(OnItemsSourcePropertyChanged)));
 
-        public static DependencyProperty TitleProperty = DependencyProperty.Register(
-            "Title",
-            typeof(string),
-            typeof(BitMaskView));
-
-        //public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
+        //public static DependencyProperty TitleProperty = DependencyProperty.Register(
         //    "Title",
         //    typeof(string),
-        //    typeof(BitMaskView),
-        //    new PropertyMetadata("None", new PropertyChangedCallback(OnItemsSourcePropertyChanged)));
+        //    typeof(BitMaskView));
+
+        public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
+            "Title",
+            typeof(string),
+            typeof(BitMaskView),
+            new PropertyMetadata("None", new PropertyChangedCallback(OnItemsSourcePropertyChanged)));
 
         private static void OnItemsSourcePropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
