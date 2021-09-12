@@ -20,12 +20,14 @@
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="35" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="35" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="DisplayName" />
-        <TextBlock Grid.Row="1" Text="{Binding Path=Description, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" 
+                   Text="{Binding Path=DisplayName, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True"
+                   Text="{Binding Path=Description, UpdateSourceTrigger=PropertyChanged}" />
         <ContentControl Grid.Row="2" ContentTemplateSelector="{StaticResource parameterTypeTemplateSelector}" />
     </Grid>
 </UserControl>
