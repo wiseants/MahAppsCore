@@ -22,6 +22,12 @@ namespace MahAppsCore.Selectors
             set;
         }
 
+        public DataTemplate SelectViewTemplate
+        {
+            get;
+            set;
+        }
+
         public override DataTemplate SelectTemplate(object selector, DependencyObject container)
         {
             // selector 타입 확인해서 템플릿 선택.

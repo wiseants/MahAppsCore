@@ -6,13 +6,16 @@
              xmlns:local="clr-namespace:MahAppsCore"
              xmlns:controls="clr-namespace:MahAppsCore.Views.CustomView"
              xmlns:selectors="clr-namespace:MahAppsCore.Selectors"
-             mc:Ignorable="d">
+             mc:Ignorable="d" x:Name="usrParameterItem">
     <UserControl.Resources>
         <DataTemplate x:Key="sliderView">
             <controls:SliderView />
         </DataTemplate>
         <DataTemplate x:Key="bitMaskView">
             <controls:BitMaskView />
+        </DataTemplate>
+        <DataTemplate x:Key="selectView">
+            <controls:SelectView />
         </DataTemplate>
         <selectors:ParameterTypeTemplateSelector x:Key="parameterTypeTemplateSelector"
             BitMaskViewTemplate="{StaticResource bitMaskView}" 
