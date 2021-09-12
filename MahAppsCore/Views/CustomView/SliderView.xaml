@@ -11,7 +11,7 @@
             <ColumnDefinition Width="100" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <mah:NumericUpDown Grid.Column="0" x:Name="numValue" Margin="5" Interval="0.1" Value="0" Minimum="0" Maximum="100" NumericInputMode="Decimal" />
+        <mah:NumericUpDown Grid.Column="0" x:Name="numValue" Margin="5" Interval="1" Value="0" Minimum="0" Maximum="100" NumericInputMode="Numbers" />
         <Slider Grid.Column="1" Margin="5" IsSnapToTickEnabled="True"
                 AutoToolTipPlacement="TopLeft"  TickPlacement="None"
                 TickFrequency="{Binding ElementName=numValue, Path=Interval, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"

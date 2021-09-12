@@ -45,5 +45,8 @@
         <controls:BitMaskView
             ItemsSource="{Binding Path=BitMasks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         <controls:SliderView />
+        <controls:ParameterItemView>
+            
+        </controls:ParameterItemView>
     </StackPanel>
 </mah:MetroWindow>
